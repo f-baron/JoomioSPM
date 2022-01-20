@@ -5,14 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "jumioSPM",
-//    platforms: [
-//        .iOS(.v13)
-//    ],
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "jumioSPM",
-            targets: ["jumioSPM"]),
+            targets: ["jumioSPM", "Jumio"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,7 +27,7 @@ let package = Package(
         //        .binaryTarget(name: "ios-jumio-mobile-sdk-4.0.0",
         //                      url: "https://mobile-sdk.jumio.com/com/jumio/ios/jumio-mobile-sdk/4.0.0/ios-jumio-mobile-sdk-4.0.0.zip",
         //                      checksum: "f9167e0f483542da2dde32791d8229246abd520141af1005acfd78a86f926d3d"),
-//            .binaryTarget(name: "Jumio", path: "Jumio.xcframework"),
+            .binaryTarget(name: "Jumio", path: "Jumio.xcframework"),
         .testTarget(
             name: "jumioSPMTests",
             dependencies: ["jumioSPM"]),
