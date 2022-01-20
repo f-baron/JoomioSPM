@@ -1,0 +1,35 @@
+// swift-tools-version:5.5
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+    name: "jumioSPM",
+//    platforms: [
+//        .iOS(.v13)
+//    ],
+    products: [
+        // Products define the executables and libraries a package produces, and make them visible to other packages.
+        .library(
+            name: "jumioSPM",
+            targets: ["jumioSPM"]),
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        // .package(url: /* package url */, from: "1.0.0"),
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+        // Targets can depend on other targets in this package, and on products in packages this package depends on.
+        .target(
+            name: "jumioSPM",
+            dependencies: []),
+        //        .binaryTarget(name: "ios-jumio-mobile-sdk-4.0.0",
+        //                      url: "https://mobile-sdk.jumio.com/com/jumio/ios/jumio-mobile-sdk/4.0.0/ios-jumio-mobile-sdk-4.0.0.zip",
+        //                      checksum: "f9167e0f483542da2dde32791d8229246abd520141af1005acfd78a86f926d3d"),
+//            .binaryTarget(name: "Jumio", path: "Jumio.xcframework"),
+        .testTarget(
+            name: "jumioSPMTests",
+            dependencies: ["jumioSPM"]),
+    ]
+)
